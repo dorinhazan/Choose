@@ -55,7 +55,7 @@ class App extends Component {
         // 2. Display the result
         let diceDOM = document.querySelector(".dice");
         diceDOM.style.display = "block";
-        diceDOM.src = require("/elevation_bootcamp/projects/Choose/Choose/src/imagesCube/dice-" + dice + ".png");
+        diceDOM.src = require("/elevation_bootcamp/projects/ChooseProj/choose/src/imagesCube/dice-" + dice + ".png");
 
     
         // 3. Update the round score IF the rolled number was NOT a 1
@@ -95,7 +95,7 @@ class App extends Component {
 
 
   render() {
-        let cube = require("/elevation_bootcamp/projects/Choose/Choose/src/imagesCube/dice-5.png")
+        let cube = require("/elevation_bootcamp/projects/ChooseProj/choose/src/imagesCube/dice-5.png")
     const arr = this.state.arr
     let i = this.state.i
     return (
