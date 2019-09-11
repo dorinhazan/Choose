@@ -45,8 +45,8 @@ class App extends Component {
       ]
     }
   }
-  
-  button=()=>{
+ 
+  button = () => {
     this.init()
         // 1. Random number
         let dice = Math.floor(Math.random() * 6) + 1;
@@ -66,19 +66,22 @@ class App extends Component {
             "current-" + activePlayer
           ).textContent = roundScore;
         } 
-      }
-    
-      changePos = () => {
-        let x= Math.floor(Math.random()*5)+1
-        if (this.state.i + x > 23) {
-          this.setState({ i: this.state.i+x -23 })
+        this.changePos(dice)
+        }
+
+        
+      
+      
+      changePos = (dice) => {
+        if (this.state.i + dice > 23) {
+          this.setState({ i: this.state.i + dice -23 })
         }
         else {
-          this.setState({ i: this.state.i + x })
+          this.setState({ i: this.state.i + dice })
         }
       }
   
-   init=()=> {
+   init = () => {
     // Reseting score vars
     scores = 0;
     roundScore = 0;
@@ -89,7 +92,6 @@ class App extends Component {
     document.getElementById("current-0")
     // document.querySelector(".dice").style.display = "none";
     // document.getElementById("current-0").textContent = "0";
-  
   
   }
 
@@ -132,7 +134,7 @@ class App extends Component {
         <div className="www green"> <div className="xxx">a</div> </div>
         <div className="www green"> <div className="xxx">a</div> </div>
         <div className=""> <div className="xxx"></div> </div>
-        <div className="" onClick={this.changePos}> <div className="xxx" onClick={this.changePos}></div> change pos </div>
+        <div className=""> <div className="xxx"></div> </div>
         <div className=""> <div className="xxx"></div> </div>
         <div className=""> <div className="xxx"></div> </div>
         <div className=""> <div className="xxx"></div> </div>
@@ -161,8 +163,7 @@ class App extends Component {
         </div>
 
   <div class="player-1-panel"></div>
-    {/* <button  onClick={this.button}className="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>  */}
-  <img  onClick={this.button} className="btn-roll" src={cube} alt="Dice" className="dice" ></img>
+  <img className="dice" onClick={this.button} className="btn-roll" src={cube} alt="Dice" className="dice" ></img>
       </div>
           )
         }

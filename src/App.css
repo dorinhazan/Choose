@@ -48,3 +48,8 @@ margin-top:10px;
   top: 400px;
   left: 1240px;
 }
+.dice{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
